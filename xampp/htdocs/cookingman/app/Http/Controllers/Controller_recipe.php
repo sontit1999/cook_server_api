@@ -15,7 +15,8 @@ class Controller_recipe extends Controller
     {
         //
         $recipe = Myrecipe::all();
-        echo $recipe;
+        return json_encode($recipe,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+        
     }
 
     /**
@@ -50,7 +51,7 @@ class Controller_recipe extends Controller
     public function show($id)
     {
          $recipe = Myrecipe::find($id);
-         return $recipe;
+         return json_encode($recipe,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
     }
 
     /**
